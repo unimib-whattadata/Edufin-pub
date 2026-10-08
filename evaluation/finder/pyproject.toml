@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aida-finder-eval"
+version = "0.1.0"
+description = "Reproducible FinDER gold-context evaluation harness for AIDA"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "httpx>=0.27,<1",
+]
+
+[project.optional-dependencies]
+data = [
+  "datasets==4.4.1",
+]
+metrics = [
+  "bert-score==0.3.13",
+  "evaluate==0.4.6",
+  "google-genai==1.62.0",
+  "langchain==0.3.27",
+  "langchain-community==0.3.31",
+  "langchain-core==0.3.80",
+  "langchain-openai==0.3.35",
+  "nltk==3.9.2",
+  "ragas==0.4.3",
+  "rouge-score==0.1.2",
+]
+all = [
+  "datasets==4.4.1",
+  "bert-score==0.3.13",
+  "evaluate==0.4.6",
+  "google-genai==1.62.0",
+  "langchain==0.3.27",
+  "langchain-community==0.3.31",
+  "langchain-core==0.3.80",
+  "langchain-openai==0.3.35",
+  "nltk==3.9.2",
+  "ragas==0.4.3",
+  "rouge-score==0.1.2",
+]
+
+[project.scripts]
+finder-eval = "finder_eval.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["finder_eval*"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]

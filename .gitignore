@@ -1,0 +1,62 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env*
+!.env.example
+!**/.env.example
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# local PolyFiQA evaluation artifacts
+/evaluation/polyfiqa/.venv/
+/evaluation/polyfiqa/data/
+/evaluation/polyfiqa/runs/
+/evaluation/polyfiqa/reports/
+/evaluation/polyfiqa/*.egg-info/
+/evaluation/polyfiqa/**/__pycache__/
+/evaluation/polyfiqa/**/*.py[cod]
+
+# local FinDER evaluation artifacts
+/evaluation/finder/.venv/
+/evaluation/finder/data/
+/evaluation/finder/runs/
+/evaluation/finder/reports/
+/evaluation/finder/*.egg-info/
+/evaluation/finder/**/__pycache__/
+/evaluation/finder/**/*.py[cod]
+/evaluation/finder/.ragas-cache/
+
+# dependency stores and local Python caches
+.pnpm-store/
+.ruff_cache/
+.pytest_cache/
+__pycache__/
+*.py[cod]
